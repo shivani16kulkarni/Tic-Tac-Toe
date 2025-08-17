@@ -1,0 +1,180 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(./assets/star-4773_256.gif) repeat;
+    cursor: pointer;
+}
+
+.main {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    box-shadow:
+        10px 0px 20px 1px white;
+    padding: 25px;
+    position: relative;
+
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+}
+
+.choice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 8px;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2px;
+}
+
+.gameBoardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+}
+
+.box {
+    height: 110px;
+    width: 110px;
+    color: white;
+    border: 0.1rem white dotted;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marked {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+
+.restart {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+input, input:focus, input:valid {
+    font-family: "Press Start 2P", system-ui;
+    background: transparent;
+    border: none;
+    border-bottom: 0.1rem white solid;
+    padding: 5px;
+    font-size: 12px;
+    color: white;
+    outline: none;
+
+}
+
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.dialogContainer {
+    width: 380px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.dialogButton {
+    outline: none;
+    font-size: 10px;
+    border: 0.1rem white solid;
+    background: black;
+    color: white;
+    padding: 10px 18px;
+    box-shadow: 10px 5px 5px black;
+}
+
+button {
+    font-family: "Press Start 2P", system-ui;
+    font-size: 18px;
+    border: 0.1rem white solid;
+    background: transparent;
+    color: white;
+    padding: 10px 18px;
+    box-shadow: 10px 5px 5px white;
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: repeating-linear-gradient(90deg,
+            white 0 10px,
+            transparent 10px 20px);
+    animation: ants 0.5s linear infinite;
+}
+
+.main::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: repeating-linear-gradient(90deg,
+            white 0 10px,
+            transparent 10px 20px);
+    animation: ants 0.5s linear infinite;
+}
+
+@keyframes ants {
+    to {
+        background-position: 20px 0;
+    }
+}
